@@ -4,7 +4,7 @@ on:
 
 jobs:
   deploy:
-    uses: StanislavZoldak/daipe-test-project/.github/workflows/run_command.yml@master
+    uses: StanislavZoldak/daipe-test-project/.github/workflows/run_command.yml@sz-test
     with:
       command: daipe dbx:repo:update --env=test --repo-url=${{ github.server_url }}/${{ github.repository }}.git --branch=${{ github.head_ref }} --repo-name=${{ github.head_ref }}
       env: test
