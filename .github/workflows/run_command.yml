@@ -49,7 +49,12 @@ jobs:
           sed -i "s,DBX_TOKEN=,DBX_TOKEN=$DBX_TOKEN,g" .env
           sed -i "s,\[Your workspace address\],$DBX_URL,g" src/$(ls src)/_config/config_$ENV.yaml
           cat src/$(ls src)/_config/config_$ENV.yaml
-          cat .env
+
+          if grep -q "address: ''" src/$(ls src)/_config/config_$ENV.yaml; then
+            echo "Please either fill the Databricks address in your config_$ENV.yaml or set up a DBX_URL secret.";
+            exit 1
+          fi
+
 
       - name: setup
         run: |
