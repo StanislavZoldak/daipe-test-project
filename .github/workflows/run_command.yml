@@ -11,7 +11,7 @@ on:
         type: string
     secrets:
       DBX_URL:
-        required: true
+        required: false
       DBX_TOKEN:
         required: true
 

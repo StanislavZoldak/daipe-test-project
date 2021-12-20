@@ -3,9 +3,6 @@ on:
   pull_request:
 
 jobs:
-  build:
-    uses: StanislavZoldak/daipe-test-project/.github/workflows/build.yml@master
-
   deploy:
     needs: build
     uses: StanislavZoldak/daipe-test-project/.github/workflows/run_command.yml@master
