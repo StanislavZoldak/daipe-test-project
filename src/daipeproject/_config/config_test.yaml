@@ -3,4 +3,4 @@ imports:
 
 parameters:
   databricks:
-    address: 'dbx_address.com'
+    address: '[Your workspace address]'
