@@ -48,6 +48,8 @@ jobs:
           cp .env.dist .env
           sed -i "s,DBX_TOKEN=,DBX_TOKEN=$DBX_TOKEN,g" .env
           sed -i "s,\[Your workspace address\],$DBX_URL,g" src/$(ls src)/_config/config_$ENV.yaml
+          cat src/$(ls src)/_config/config_$ENV.yaml
+          cat .env
 
       - name: setup
         run: |
