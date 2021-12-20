@@ -4,7 +4,6 @@ on:
 
 jobs:
   deploy:
-    needs: build
     uses: StanislavZoldak/daipe-test-project/.github/workflows/run_command.yml@master
     with:
       command: daipe dbx:repo:update --env=test --repo-url=${{ github.server_url }}/${{ github.repository }}.git --branch=${{ github.head_ref }} --repo-name=${{ github.head_ref }}
